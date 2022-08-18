@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="es">
+	<head>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title> Encriptador de Texto </title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<header>
+
+		</header>
+
+		<main>
+			<img class="logo" src="imagenes/Logo.png" alt="Logo Alura">
+
+			<textarea cols="70" rows="10" id="mensaje" required>Ingrese el texto aqui</textarea>
+
+			<div class="botones">
+				<p class="indicaciones"> <img class="advertencia" src="imagenes/advertencia.png" alt="Simbolo de advertencia"> letras minúsculas y sin acentos </p>
+				<button type="button" onclick="encriptador()"   class="encriptar">Encriptar</button>
+				<button type="button" onclick="desencriptador()" class="desencriptar">Desencriptar</button>
+			</div>
+
+			<div id="texto-listo">
+				<img class="muñeco" src="imagenes/Muñeco.png" alt="Persona buscando con una lupa">
+				<p> Ningún mensaje fue encontrado</p>
+				<p> Ingresa el texto que desees encriptar o desencriptar.</p>
+			</div>
+
+		</main>
+	</body>
+
+	<footer>
+
+	</footer>
+</html>
+
+	
+<script>
+	// Encriptacion vocales
+	var encriptacionA = "ai";
+	var encriptacionE = "enter";
+	var encriptacionI = "imes";
+	var encriptacionO = "ober";
+	var encriptacionU = "ufat";
+
+	function encriptador() {
+		const texto = document.getElementById("mensaje").value;
+		var textoEncriptado = "<p class="+"transcripcion"+"> ";
+
+		//Encriptacion del texto
+		for (var posicion = 0; posicion < texto.length; posicion++) {
+			if (texto[posicion] == "a") {
+				textoEncriptado = textoEncriptado + encriptacionA;
+				continue;
+
+			}else if (texto[posicion] == "e") {
+				textoEncriptado = textoEncriptado + encriptacionE;
+				continue;
+
+			}else if (texto[posicion] == "i") {
+				textoEncriptado = textoEncriptado + encriptacionI;
+				continue;
+
+			}else if (texto[posicion] == "o") {
+				textoEncriptado = textoEncriptado + encriptacionO;
+				continue;
+
+			}else if (texto[posicion] == "u") {
+				textoEncriptado = textoEncriptado + encriptacionU;
+				continue;
+
+			}else {
+				textoEncriptado = textoEncriptado + texto[posicion];
+			}
+		}
+		var botoncopiar = "<button type="+"button " +"onclick="+"copiar() " +"class="+"copiar"+">Copiar</button>";
+		textoEncriptado = textoEncriptado + " </p>" + botoncopiar;
+		document.getElementById("texto-listo").innerHTML = textoEncriptado;
+		
+		return textoEncriptado;
+	}
+
+	function desencriptador() {
+		const texto = document.getElementById("mensaje").value;
+		var textoDesencriptado = "<p class="+"transcripcion"+"> ";;
+
+		//Desencriptacion del texto
+		for (var posicion = 0; posicion < texto.length; ) {
+			if (texto[posicion] == "a") {
+				textoDesencriptado = textoDesencriptado + texto[posicion];
+				posicion = posicion + encriptacionA.length;
+				continue;
+
+			}else if (texto[posicion] == "e") {
+				textoDesencriptado = textoDesencriptado + texto[posicion];
+				posicion = posicion + encriptacionE.length;
+				continue;
+
+			}else if (texto[posicion] == "i") {
+				textoDesencriptado = textoDesencriptado + texto[posicion];
+				posicion = posicion + encriptacionI.length;
+				continue;
+
+			}else if (texto[posicion] == "o") {
+				textoDesencriptado = textoDesencriptado + texto[posicion];
+				posicion = posicion + encriptacionO.length;
+				continue;
+
+			}else if (texto[posicion] == "u") {
+				textoDesencriptado = textoDesencriptado + texto[posicion];
+				posicion = posicion + encriptacionU.length;
+				continue;
+
+			}else {
+				textoDesencriptado = textoDesencriptado + texto[posicion];
+				posicion++;
+			}
+		}
+		var botoncopiar = "<button type="+"button " +"onclick="+"copiar() " +"class="+"copiar"+">Copiar</button>";
+		textoDesencriptado = textoDesencriptado + " </p>" + botoncopiar;
+		document.getElementById("texto-listo").innerHTML = textoDesencriptado;
+		return textoDesencriptado;
+	}
+
+	function copiar(){
+		let texto = document.getElementById("texto-listo").innerText;
+
+		document.execCommand('copy');
+
+		alert(texto);
+
+	}
+	
+</script>
