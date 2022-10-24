@@ -1,0 +1,142 @@
+/* Fuente de la pagina */
+body{
+    font-family: 'Inter';
+    font-style: normal;
+    background: #e5e5e5;
+}
+
+header{
+    display: flex;
+    margin: 4%;
+}
+
+.contenidoPrincipal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5%;
+}
+
+.contenidoPrincipal-mensaje{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+.mensaje{
+    background: none;
+    border: none;
+    resize: none;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: #0A3871;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+
+    width: 800px;
+    height: 944px;
+
+}
+
+.indicaciones{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: #0d467e;
+    font-style: bold;
+    opacity: 0.8;
+    padding: 3px
+    align-items: bottom;
+}
+
+.advertencia{
+    width: 16px;
+    height: 16px;
+}
+
+.botones {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: bottom;
+    text-align: center;
+    justify-content: space-between;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+}
+
+.encriptar{
+    padding: 1%;
+    gap: 1%;
+
+    height: 67px;
+    width: 328px;
+    font-size: 150%;
+
+    color: #FFFFFF;
+    background: rgba(10, 56, 113, 1);
+    border-radius: 24px; 
+}
+
+.desencriptar{
+    padding: 1%;
+    gap: 1%;
+
+    height: 67px;
+    width: 328px;
+    font-size: 150%;
+    align-self: center;
+
+    background: #D8DFE8;
+    border-color: rgba(10, 56, 113, 1);
+    border-radius: 24px; 
+}
+
+
+.contenidoPrincipal-resultado{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+    background: #ffffff;
+}
+
+.resultado{
+    background-image: url("imagenes/Muñeco.png"), url("imagenes/Frame\ 5.png");
+    background-position: center, bottom;
+    background-repeat: no-repeat;
+
+    border: none;
+    resize: none;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-color: #495057;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    width: 400px;
+    height: 944px;
+    
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+
+.copiar{
+    padding: 1%;
+    gap: 1%;
+
+    height: 67px;
+    width: 328px;
+    font-size: 150%;
+
+    background: #ffffff;
+    border-color: rgba(10, 56, 113, 1);
+    border-radius: 24px;
+}
