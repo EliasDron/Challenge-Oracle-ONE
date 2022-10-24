@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="es">
+	<head>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title> Encriptador/Desencriptador de Texto </title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+		<link rel="javascript" href="encriptador.js">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter" rel="stylesheet">
+	</head>
+
+	<body>
+		<header>
+			<img class="logo" src="imagenes/Logo.png" alt="Logo Alura">
+		</header>
+
+		<main class="contenidoPrincipal">
+			<section class="contenidoPrincipal-mensaje">
+				<textarea class="mensaje"  required>Ingrese el texto aqui</textarea>
+				<p class="indicaciones"> <img class="advertencia" src="imagenes/advertencia.png" alt="Simbolo de advertencia"> letras minúsculas y sin acentos </p>
+				<div class="botones">
+					<button type="button" onclick="btnEncriptar()" class="encriptar">Encriptar</button>
+					<button type="button" onclick="btnDesencriptar()" class="desencriptar">Desencriptar</button>
+				</div>
+			</section>
+
+			<section  class="contenidoPrincipal-resultado">	
+				<textarea class="resultado" ></textarea>
+					<div class="botones">
+						<button type="button" onclick="btnCopiar()" class="copiar">Copiar</button>
+					</div>
+			</section>
+		</main>
+
+		<script src="encriptador.js"></script>
+	</body>
+
+	<footer>
+
+	</footer>
+</html>
